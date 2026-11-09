@@ -82,13 +82,14 @@ function bridge() {
 }
 
 function conveyor(beltEnd, beltTop) {
-  const feet = [468,687,907,1160].map(x=>
+  const feet = [468,687,907].map(x=>
     box(x,186,0,28,27,81,slate) + box(x,58,0,28,26,84,steel)
     + box(x-8,53,0,45,36,7,slate) + spot(x+13,56,8,2.4,"#b4c9d8")).join("");
   const markerPositions = [483,585,687,789,891,993,1095,1147];
   for (let x=1249;x<beltEnd;x+=102) markerPositions.push(x);
   const markers = markerPositions.map(x=>spot(x,57,88,2.5,"#b6d0de")).join("");
-  return feet + box(446,58,70,beltEnd-443,152,37,slate)
+  return feet + box(1160,186,0,28,27,81,slate)
+    + box(446,58,70,beltEnd-443,152,37,slate)
     + box(447,196,105,beltEnd-446,16,10,steel)
     + polygon(beltTop,"url(#belt)")
     + '<g clip-path="url(#belt-clip)"><g id="treads"></g></g>'
