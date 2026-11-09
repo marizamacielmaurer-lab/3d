@@ -1,0 +1,29 @@
+:root{color-scheme:dark;--ink:#f3f7fb;--cyan:#65e4ea;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{background:radial-gradient(ellipse at 49% 49%,#172d45 0%,#0e1d30 48%,#091423 85%);color:var(--ink)}
+main{width:min(100%,235dvh);height:100%;height:100dvh;margin:auto;display:grid;grid-template-rows:minmax(0,1fr) auto auto;padding:clamp(10px,1.8dvh,40px) clamp(12px,1.8vw,72px) clamp(15px,3.7dvh,72px)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.scene{min-width:0;min-height:0;display:grid;place-items:center}
+.scene svg{display:block;width:100%;height:100%;min-height:0;overflow:hidden}
+.stations{width:min(100%,145vh);margin:0 auto;list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,1vw,25px)}
+.stations li{display:flex;align-items:center;justify-content:center;gap:.65em;position:relative;color:#a7b9ca;font-size:clamp(10px,1.85vh,36px);font-weight:580;padding:.55em 0 .65em;border-top:1px solid #39526a;transition:color .3s,border-color .3s}
+.stations li b{font:650 .75em ui-monospace,Consolas,monospace;color:#829bb1;transition:color .3s}
+.stations li.active{color:#f1fcff;border-color:var(--cyan)}
+.stations li.active b{color:var(--cyan)}
+footer{display:grid;place-items:center;padding-top:clamp(8px,2.7vh,52px)}
+button{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:.72em;min-height:clamp(56px,8.7dvh,175px);width:min(100%,clamp(300px,43dvh,840px));border:1px solid #a1f8f4;border-radius:.84em;background:linear-gradient(135deg,#9af7ef,#5fdcde);color:#092831;font:800 clamp(14px,2.1dvh,42px)/1 system-ui,sans-serif;letter-spacing:.075em;cursor:pointer;touch-action:manipulation;user-select:none;box-shadow:0 9px 25px #0005,0 0 26px #57dfe029;transition:transform .18s,background .3s,border-color .3s,color .3s,box-shadow .3s;animation:breathe 4s ease-in-out infinite}
+button:active{transform:scale(.965);box-shadow:0 2px 12px #0004}
+button:focus-visible{outline:3px solid white;outline-offset:5px}
+button[aria-disabled="true"]{animation:none;cursor:default;background:#14293e;color:#d7e9f4;border-color:#41627b;box-shadow:none;transform:none}
+.play{display:grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:#0c384224}
+.play svg{width:1em;height:1em;fill:currentColor}
+button[aria-disabled="true"] .play svg{display:none}
+button[aria-disabled="true"] .play::after{content:"";width:.55em;height:.55em;background:var(--cyan);border-radius:50%;animation:pulse 1.4s ease-in-out infinite}
+.progress{position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--cyan);transform:scaleX(var(--progress,0));transform-origin:left;opacity:0}
+button[aria-disabled="true"] .progress{opacity:1}
+@keyframes breathe{50%{box-shadow:0 9px 25px #0005,0 0 39px #57dfe053}}
+@keyframes pulse{50%{opacity:.35}}
+@media(max-aspect-ratio:1/1){main{padding-inline:12px}.stations li{flex-direction:column;gap:.2em}}
+@media(max-height:430px) and (orientation:landscape){main{padding-block:10px}footer{padding-top:4px}.stations li{padding-block:3px}button{min-height:42px}}
+@media(prefers-reduced-motion:reduce){*,*::after{animation:none!important;transition:none!important}}

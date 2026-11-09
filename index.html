@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#091423">
+<title>Linha de produção · Impressão 3D</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="simulacao.js"></script>
+</head>
+<body>
+<main>
+  <div id="status" class="sr-only" role="status">SISTEMA PRONTO</div>
+  <section class="scene" aria-label="Impressora 3D conectada a um ejetor linear, uma esteira e uma estação de inspeção">
+    <svg id="factory" viewBox="58 -23 1428 574" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Linha industrial ilustrada em perspectiva"></svg>
+  </section>
+  <ol class="stations" aria-label="Etapas da linha">
+    <li><b>01</b><span>Impressão 3D</span></li>
+    <li><b>02</b><span>Ejeção</span></li>
+    <li><b>03</b><span>Transporte</span></li>
+    <li><b>04</b><span>Inspeção</span></li>
+  </ol>
+  <footer>
+    <button id="start" type="button">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.8a.9.9 0 0 1 1.4-.76l9.2 6.2a.9.9 0 0 1 0 1.52l-9.2 6.2A.9.9 0 0 1 8 18.2Z"/></svg></span>
+      <span id="action">INICIAR SIMULAÇÃO</span>
+      <span class="progress" aria-hidden="true"></span>
+    </button>
+  </footer>
+</main>
+</body>
+</html>
