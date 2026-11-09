@@ -82,7 +82,7 @@ function bridge() {
 }
 
 function conveyor(beltEnd, beltTop) {
-  const feet = [468,687,907,1125].map(x=>
+  const feet = [468,687,907,1160].map(x=>
     box(x,186,0,28,27,81,slate) + box(x,58,0,28,26,84,steel)
     + box(x-8,53,0,45,36,7,slate) + spot(x+13,56,8,2.4,"#b4c9d8")).join("");
   const markerPositions = [483,585,687,789,891,993,1095,1147];
@@ -102,10 +102,10 @@ function conveyor(beltEnd, beltTop) {
 }
 
 function scannerBack() {
-  // The rear foot is beyond the far rail. The belt hides its lower section.
-  return box(1008,222,0,66,43,13,slate)
-    + box(1026,229,13,30,26,234,steel)
-    + box(1023,226,211,36,31,33,slate);
+  // Draw a continuous post behind the belt, with its base on the far side.
+  return box(1008,214,0,66,43,7,slate)
+    + box(1026,220,7,30,26,240,steel)
+    + box(1023,217,211,36,32,33,slate);
 }
 
 function scannerFront() {
